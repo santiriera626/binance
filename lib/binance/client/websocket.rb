@@ -176,7 +176,7 @@ module Binance
       # :level    - The String level to use for the depth stream (optional)
       # :interval - The String interval to use for the kline stream (optional)
       def stream_url(symbol:, type:, level: '', interval: '')
-        "#{symbol.downcase}@#{type}".tap do |url|
+        "#{symbol}@#{type}".tap do |url|
           url << level
           url << "_#{interval}" unless interval.empty?
         end
